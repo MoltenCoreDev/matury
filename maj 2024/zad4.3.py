@@ -1,9 +1,10 @@
+from typing import List, Any
 
 counter = 0
-first_row = []
+first_row: list[Any] = []
 second_row = []
 
-with open("Dane/liczby_przyklad.txt") as file:
+with open("Dane/liczby.txt") as file:
     first_row = file.readline().split()
     first_row = [int(e) for e in first_row]
     second_row = file.readline().split()
@@ -22,8 +23,8 @@ def sort_arr(arr):
 def prime_factors(n):
     i = 2
     factors = []
-    while i*i <= n:
-        if n % i:
+    while i <= n:
+        if n % i != 0:
             i+= 1
         else:
             n //= i
@@ -32,6 +33,22 @@ def prime_factors(n):
         factors.append(n)
     return factors
 
+results = []
 
 for liczba in second_row:
+    factors = prime_factors(liczba)
+    frd = first_row.copy()
+    allow = False
+    for factor in factors:
+        if factor in frd:
+            frd.remove(factor)
+            allow = True
+            #print(f"found factor of {liczba}")
+        else:
+            allow = False
+            break
+            #print(f"NOT POSSIBLE FOR {liczba}")
+    if allow:
+        results.append(str(liczba))
 
+print(" ".join(results))
