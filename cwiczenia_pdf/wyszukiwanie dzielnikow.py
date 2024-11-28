@@ -1,14 +1,11 @@
 
-res = []
 def dzielniki(liczba):
+    res = []
     n = 1
-    num = liczba
-    while n*n <= liczba:
-        if num % n == 0:
+    while n < liczba:
+        if liczba % n == 0:
             res.append(n)
-            num = num//n
         n += 1
+    return res
 
-dzielniki(10)
-
-print(res)
+print(dzielniki(10))
