@@ -10,15 +10,19 @@ lista = [
 def to_csv(obj):
     res = ""
     # create index
+    row = []
     for key in obj[0].keys():
-        res += f"{key}"
-        res += ","
-    res += "\n"
+        row.append(key)
+    res += ",".join(row) + "\n"
+    for line in obj:
+        row = []
+        for val in line.values():
+            row.append(val)
+        row = [str(elem) for elem in row]
+        res += ",".join(row) + "\n"
 
-    
+
     return res
 
-print(to_csv(lista))
-
 with open("data/punkty.csv", "w+") as file:
-    pass
+    file.write(to_csv(lista))
