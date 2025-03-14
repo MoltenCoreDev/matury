@@ -132,12 +132,137 @@ from random import random, randint
 
 # 3.4
 
-sum = 0
-count = 0
+# sum = 0
+# count = 0
 
-while sum < 100:
-    n = int(input("> "))
-    count += 1
-    sum += n
+# while sum < 100:
+#     n = int(input("> "))
+#     count += 1
+#     sum += n
+#
+# print(f"Wprowadzono {count} liczb/y")
 
-print(f"Wprowadzono {count} liczb/y")
+# 3.5
+
+# haslo = "haslo"
+# def zaloguj():
+#     for i in range(3):
+#         inp = input(f"Wprowadź hasło... pozostało: {3-i} prób.\n> ")
+#         if inp == haslo:
+#             print("Zalogowano")
+#             return True
+#         else:
+#             print("Błędne hasło")
+#     print("Nie możesz się teraz zalogować.")
+# zaloguj()
+
+# 3.6
+
+# print("Gra zgadywanka")
+# l = int(input("Podaj najmniejszą liczbe całkowitą do losowania\n>"))
+# m = int(input("Podaj największą liczbe całkowitą do losowania\n>"))
+#
+# num = randint(l,m)
+# while True:
+#     guess = int(input("Podaj swój strzał\n>"))
+#     if guess < num:
+#         print("za mało!")
+#     elif num == guess:
+#         print("Brawo zgadłxś!")
+#         break
+#     else:
+#         print("za duzo!")
+
+# 3.7
+
+# podzielne = [x for x in range(0,100,3)]
+#
+# n = input("Ile liczb losowych podzielnych przez 3? \n>")
+#
+# for i in range(int(n)):
+#     print(podzielne[randint(0,len(podzielne))])
+
+# 3.8
+
+# def czy_pierwsza(n: int):
+#     i = 1
+#     pf = []
+#     while i*i <= n:
+#         if n % i == 0:
+#             pf.append(i)
+#             n = n // i
+#         i+=1
+#         if len(pf) > 2:
+#             break
+#     return len(pf) < 2
+#
+# print(czy_pierwsza(int(input("Liczba do sprawdzenia \n>"))))
+
+# 3.9
+
+# num = input("liczba \n>")
+# sum = 0
+#
+# for letter in num:
+#     n = int(letter)
+#     sum += n
+#
+# print(sum)
+
+# 4.1
+#
+# napis = input("napis \n>")
+#
+# print(len(napis))
+
+# 4.2
+
+# napis1 = input("napis1\n>")
+# napis2 = input("napis2\n>")
+#
+# if napis2 in napis1:
+#     print("Pierwszy substring",napis1.find(napis2))
+#     print("Ilość: ", napis1.count(napis2))
+#     print("Ostatni substring", napis1.rfind(napis2))
+
+# 4.3
+
+# napis = input("Napis \n>")
+#
+# if len(napis) < 2:
+#     print("Napis za krótki :(")
+#
+# print(napis[0], napis[1], napis[2:])
+#
+# print(napis[-1], napis[-2], napis[:-2])
+#
+# print([napis[n] for n in range(0, len(napis), 2)])
+# print([napis[-n] for n in range(1, len(napis), 2)])
+
+# 4.4
+
+# napis = input("Napis\n>")
+#
+# if napis == napis[::-1]:
+#     print(f"{napis} jest palindromem!")
+# else:
+#     print(f"{napis} nie jest palindromem!")
+
+# 4.5
+
+# num = input("liczba \n>")
+# sum = 0
+#
+# for letter in num:
+#     n = int(letter)
+#     sum += n
+#
+# print(sum)
+
+# 4.6
+
+dlugosc = input("podaj długość \n>")
+
+def generuj_znak():
+    znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789*&^%$#@!"
+    return znaki[randint(0, len(znaki)-1)]
